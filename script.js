@@ -38,7 +38,7 @@ let score = 75;
 if (score >= 90) {
   console.log("A評価");
 } else if (score >= 70) {
-  console.log("B評価");
+  console.log("Z評価");
 } else {
   console.log("C評価");
 }
