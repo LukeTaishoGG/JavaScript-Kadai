@@ -4,7 +4,7 @@ const subject = {"国語": 100, "数学": 80, "英語": 75, "理科": 70, "社�
 const subTotal = subject["国語"] + subject["数学"] + subject["英語"] + subject["理科"] + subject["社会"];
 console.log("合計点数:",subTotal);
 // (2)引き算を使用して計算してください
-const minus = (10000 - 80000);
+const minus = (100000 - 80000);
 console.log("引き算結果:",minus);
 // (3)掛け算を使用して計算してください
 const kakezan = (32*64);
@@ -104,7 +104,6 @@ for (let i = 0; i < items2.length; i++) {
   console.log(items2[i]);
 }
 // (3) 配列の合計を計算してください
-// (3) 配列の合計を計算してください
 const numbers3 = [1, 2, 3];
 let sum3 = 0;
 for (let i = 0; i < numbers3.length; i++) {
@@ -131,7 +130,6 @@ for (let i = 1; i <= 100; i++) {
   if (i > 100) {
     break;
   }
-
   if (i % 2 === 0) {
     continue;
   }
@@ -157,7 +155,9 @@ for (let i = 0; i < 10; i++) {
 }
 // foreach
 const foreachItems = ["apple", "banana", "cat"];
-foreachItems.forEach(item => console.log(foreachItems));
+foreachItems.forEach(items => {
+  console.log(items);
+});
 // while
 let total = 0;
 while (total < 100) {
