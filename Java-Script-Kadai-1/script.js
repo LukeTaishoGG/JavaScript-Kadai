@@ -7,7 +7,7 @@ const suuji = 69;
 const isSunny = false;
 const isRaining = true;
 //                    4未定義の状態で変数を宣言してください
-let miteigi;
+let miteigi = undefined;
 //                    5null を格納する変数を宣言してください
 const unknown = null;
 //                    6文字列の配列を作ってみよう
@@ -50,10 +50,15 @@ function add(a, b) {
 }
 console.log(add(4,5));
 //                    5文字列を結合する関数を作りましょう
-function text5 (sweet,juce) {
-  console.log(sweet + juce);
+function text5 (sweet, juce ,text1, text2) {
+  console.log(sweet + juce + text1 + text2);
 }
-text5(["Creap", "Donut"], ["MountainDew", "RedBull"]);
+text5("Creap", "Donut","MountainDew", "RedBull");
+function textx (sweet, juce ) {
+  console.log(sweet + juce );
+}
+textx("Creap" + "Donut","MountainDew"  +"RedBull");
+
 // < DOM操作を練習してみよう >
 //                    1IDを使ってDOMを取得しましょう
 const box1 = document.getElementById("domBox");
