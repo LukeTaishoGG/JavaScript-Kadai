@@ -1,3 +1,6 @@
+.div1, .div2, .div3, .div4 {
+  height: 80px;
+}
 .error-name {
   display:none;
 }
