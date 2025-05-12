@@ -75,6 +75,7 @@ window.onload = () => {
       result.textContent = "同点"
     }
     if (roundNumber === 3) {
+      ready.disabled = true;
       if (player1P > player2P) {
         alert("You Lose");
       } else if (player1P < player2P) {
