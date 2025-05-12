@@ -19,7 +19,7 @@ window.onload = () => {
 
   const round = document.getElementById("round");
   let roundNumber = 0;
-  round.textContent = `ラウンド数: ${roundNumber}ポイント`;
+  round.textContent = `ラウンド数: ${roundNumber}`;
   const point1 = document.getElementById("point1");
   let player1P = 0;
   point1.textContent = `プレイヤー1: ${player1P}ポイント`;
@@ -28,7 +28,7 @@ window.onload = () => {
   point2.textContent = `プレイヤー2: ${player2P}ポイント`;
 // ボタンクリック時のイベント
   ready.addEventListener('click',() => {
-    round.textContent = `ラウンド数: ${++roundNumber}ポイント`;
+    round.textContent = `ラウンド数: ${++roundNumber}`;
 // ランダムの数字シャッフル
     const random1 = Math.floor(Math.random()*6);
     const random2 = Math.floor(Math.random()*6);
@@ -62,25 +62,27 @@ window.onload = () => {
     }
 // 結果をresultに表示
     const result = document.getElementById("result");
-    if (random1 < random2) {
+    if (random1 > random2) {
       console.log("win");
-      point1.textContent = `プレイヤー1: ${++player1P}ポイント`
-      result.textContent = "勝ち"
-    }else if (random1 > random2) {
+      player1P++;
+      point1.textContent = `プレイヤー1: ${player1P}ポイント`;
+      result.textContent = "勝ち";
+    } else if (random1 < random2) {
       console.log("lose");
-      point2.textContent = `プレイヤー1: ${++player1P}ポイント`
-      result.textContent = "負け"
-    }else if (random1 === random2) {
+      player2P++;
+      point2.textContent = `プレイヤー2: ${player2P}ポイント`;
+      result.textContent = "負け";
+    } else {
       console.log("tie");
-      result.textContent = "同点"
+      result.textContent = "同点";
     }
     if (roundNumber === 3) {
       ready.disabled = true;
-      if (player1P > player2P) {
-        alert("You Lose");
-      } else if (player1P < player2P) {
+      if (player1P < player2P) {
         alert("You Win");
-      } else {
+      }else if (player1P > player2P) {
+        alert("You Lose");
+      }else {
         alert("No Contest");
       }
     }
