@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./style.css">
+  <title>JavaScript応用課題</title>
+</head>
+<body>
+  <h1>ダイスゲーム</h1>
+  <main class="dice-game">
+    <div id="gameScreen" class="game-screen">
+      <div id="player1" class="player1">プレイヤー1</div>
+      <div id="shuffles" class="shuffles">
+        <img id="saikoro1" class="saikoro1"></img>
+        <img id="saikoro2" class="saikoro2"></img>
+      </div>
+      <div id="player2" class="player2">プレイヤー2</div>
+        <div id="ReadyResult" class="ready-result">
+          <button id="ready" class="ready">勝負</button>
+          <div id="result" class="result">勝敗</div>
+        </div>
+    </div>
+    <div id="pointScreen" class="point-screen">
+      <p id="round"></p>
+      <p id="point1"></p>
+      <p id="point2"></p>
+    </div>
+  </main>
+  <script src="script.js" defer></script>
+</body>
