@@ -16,7 +16,9 @@ window.onload = () => {
   const Number4 = "https://chicodeza.com/wordpress/wp-content/uploads/saikoro-illust4.png";
   const Number5 = "https://chicodeza.com/wordpress/wp-content/uploads/saikoro-illust5.png";
   const Number6 = "https://chicodeza.com/wordpress/wp-content/uploads/saikoro-illust6.png";
-
+// サイコロ初期画面
+  saikoro1.src=Number1;
+  saikoro2.src=Number1;
   const round = document.getElementById("round");
   let roundNumber = 0;
   round.textContent = `ラウンド数: ${roundNumber}`;
@@ -60,30 +62,32 @@ window.onload = () => {
     }else if (random2 === 5) {
       saikoro2.src=Number6;
     }
+// プレイヤーの1、2のDivのID入手
+    let player1 = document.getElementById("player1")
+    let player2 = document.getElementById("player2")
 // 結果をresultに表示
     const result = document.getElementById("result");
     if (random1 > random2) {
-      console.log("win");
       player1P++;
       point1.textContent = `プレイヤー1: ${player1P}ポイント`;
       result.textContent = "勝ち";
     } else if (random1 < random2) {
-      console.log("lose");
       player2P++;
       point2.textContent = `プレイヤー2: ${player2P}ポイント`;
       result.textContent = "負け";
     } else {
-      console.log("tie");
       result.textContent = "同点";
     }
-    if (roundNumber === 3) {
+    if (round.textContent == "ラウンド数: 3") {
       ready.disabled = true;
       if (player1P < player2P) {
-        alert("You Win");
+        setTimeout(() => alert("Player2 Win"),500);
+        player2.style.backgroundColor="red";
       }else if (player1P > player2P) {
-        alert("You Lose");
+        setTimeout(() => alert("Player1 Win"),500);
+        player1.style.backgroundColor="red";
       }else {
-        alert("No Contest");
+        setTimeout(() => alert("No Contest"),500);
       }
     }
   });
