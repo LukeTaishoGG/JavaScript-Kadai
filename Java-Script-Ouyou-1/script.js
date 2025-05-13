@@ -51,7 +51,7 @@ window.onload = () => {
     } else {
       result.textContent = "同点";
     }
-    if (round.textContent == "ラウンド数: 3") {
+    if (roundNumber === 3) {
       ready.disabled = true;
       if (player1P < player2P) {
         setTimeout(() => alert("Player2 Win"),500);
