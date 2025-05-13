@@ -1,0 +1,68 @@
+.dice-game {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  gap: 20px;
+}
+
+/* 大きな要素は GameScreen と PointScreen */
+.game-screen {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.player1, .player2 {
+  height: 100px;
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #000000;
+}
+
+.shuffles {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.saikoro1, .saikoro2 {
+  height: 100px;
+  width: 100px;
+  border: 2px solid #000000;
+}
+
+.ready-result {
+  display: flex;
+  width: 600px;
+  justify-content: space-between;
+}
+
+.ready {
+  border: 2px solid #000000;
+  height: 100px;
+  width: 100px;
+}
+
+.result{
+  border: 2px solid #000000;
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ここに今までの結果が蓄積されてく */
+.point-screen {
+  height: 133px;
+  width: 235px;
+  display: block;
+  border: 2px solid #000000;
+}
