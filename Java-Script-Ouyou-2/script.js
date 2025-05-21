@@ -6,7 +6,6 @@ window.onload = () => {
   let box3 = document.getElementById("box3");
   // 2. デフォルトの色配列を設定
   let defultBox = ["red", "blue", "yellow", "pink"];
-
   // 3. シャッフル関数を定義
   function shuffle (array){
     let colorBox = [...array]; // ["red", "blue", "yellow", "pink"]
@@ -25,8 +24,6 @@ window.onload = () => {
   let newColor = shuffle(defultBox);
   // 下の色のシャッフルの処理を定義
   let newSecret = shuffle(defultBox);
-
-
   // 5. 一致しているインデックスを返す関数
   function checkSameNum() {
     let result = [];
@@ -95,7 +92,6 @@ window.onload = () => {
   }
   zeroResult(); //正解数反映
   reflectionColor(); //色移動反映
-  
   // 11. ボタン移動のイベント
   // // 0 と 1 入れ替え
   document.querySelectorAll(".change01").forEach(change01 => {
