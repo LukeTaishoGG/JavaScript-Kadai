@@ -1,4 +1,3 @@
-const onload = window.onload;
 const ready = document.getElementById("ready");
 
 // 読み込み時のイベント

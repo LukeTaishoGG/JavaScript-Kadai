@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./style.css">
+  <title>JavaScript応用課題2</title>
+</head>
+<body>
+  <h1>Javascript応用課題2</h1>
+  <h2>色当てゲーム</h2>
+  <main>
+    <div id="colorBox" class="color-box">
+      <div class="targets">
+        <div id="colorBox0" class="color-box-0">
+          <button id="left0" class="left">←</button>
+          <div id="box0" class="box-0"></div>
+          <button id="right0" class="right change01">→</button>
+        </div>
+        <div class="secret-0"></div>
+      </div>
+      <div class="targets">
+        <div id="colorBox1" class="color-box-1">
+          <button id="left1" class="left change01">←</button>
+          <div id="box1" class="box-1"></div>
+          <button id="right1" class="right change12">→</button>
+        </div>
+        <div class="secret-1"></div>
+      </div>
+      <div class="targets">
+        <div id="colorBox2" class="color-box-2">
+          <button id="left2" class="left change12">←</button>
+          <div id="box2" class="box-2"></div>
+          <button id="right2" class="right change23">→</button>
+        </div>
+        <div class="secret-2"></div>
+      </div>
+      <div class="targets">
+        <div id="colorBox3" class="color-box-3">
+          <button id="left3" class="left change23">←</button>
+          <div id="box3" class="box-3"></div>
+          <button id="right3" class="right">→</button>
+        </div>
+        <div class="secret-3"></div>
+      </div>
+    </div>
+    <p id="result" class="result"></p>
+      <button id="reset" class="reset">リセット</button>
+    </div>
+  </main>
+  <script src="script.js" defer></script>
+</body>
