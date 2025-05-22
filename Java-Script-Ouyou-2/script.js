@@ -44,23 +44,22 @@ window.onload = () => {
     }
     return result;
   }
-  let sameNumarray = checkSameNum(newColor, newSecret);
   // 正解数を表示の関数を定義
   const resultReroad = (color1, color2) => {
     let sameNumArray = checkSameNum(color1, color2);
     result.textContent = `${sameNumArray.length}個正解してます`;
   };
   // ボックスの色移動の関数を定義
-  let reflectionColor = (color1, color2) => {
+  let reflectionColor = () => {
     // 上の色を表示
     for (let i = 0; i < colorBoxArry.length; i++) {
       colorBoxArry[i].style.backgroundColor = newColor[i];
     }
   }
   // 色移動反映
-  reflectionColor(newColor, newSecret);
+  reflectionColor();
   // 答えがゼロになるように完全シャッフルする関数を定義
-  let zeroResult = (color1, color2) =>{
+  let zeroResult = () =>{
     let sameNumArray = checkSameNum(newColor, newSecret);
     // 1つが同じ 場合
     if (sameNumArray.length === CORRECT_ANSWER_ONE){
@@ -71,7 +70,7 @@ window.onload = () => {
       }else if(sameNumArray[0] === 1 || sameNumArray[0] === 2){
         [newSecret[1],newSecret[2]] = [newSecret[2],newSecret[1]];
         resultReroad(newColor, newSecret); //正解数反映
-        reflectionColor(newColor, newSecret);//色移動反映
+        reflectionColor();//色移動反映
       }
     }
     // // 2つが同じ場合
@@ -81,7 +80,7 @@ window.onload = () => {
       let indexNum1 = sameNumArray[1];//二つの場合のインデックスの[1]の宣言
       [newSecret[indexNum0],newSecret[indexNum1]] = [newSecret[indexNum1],newSecret[indexNum0]];
       resultReroad(newColor, newSecret); //正解数反映
-      reflectionColor(newColor, newSecret);//色移動反映
+      reflectionColor();//色移動反映
     }
     // 4つが同じ場合
     if (sameNumArray.length === CORRECT_ANSWER_FOUR){
@@ -91,10 +90,10 @@ window.onload = () => {
       newSecret.splice(numIndex4, 1); //削除
       newSecret.push(secretTemp2); //後ろに追加
       resultReroad(newColor, newSecret); //正解数反映
-      reflectionColor(newColor, newSecret);//色移動反映
+      reflectionColor();//色移動反映
     }
   }
-  zeroResult(newColor, newSecret); //正解数反映
+  zeroResult(); //正解数反映
   resultReroad(newColor, newSecret); //正解数反映
   // console.log(newSecret,newColor);
   // ボタン移動のイベント
@@ -104,7 +103,7 @@ window.onload = () => {
       checkSameNum(newColor, newSecret);
       [newColor[0],newColor[1]] = [newColor[1],newColor[0]];
       resultReroad(newColor, newSecret); //正解数反映
-      reflectionColor(newColor, newSecret);//色移動反映
+      reflectionColor();//色移動反映
       // console.log(newColor,newSecret);
     });
   });
@@ -114,7 +113,7 @@ window.onload = () => {
       checkSameNum(newColor, newSecret);
       [newColor[1],newColor[2]] = [newColor[2],newColor[1]];
       resultReroad(newColor, newSecret); //正解数反映
-      reflectionColor(newColor, newSecret);//色移動反映
+      reflectionColor();//色移動反映
       // console.log(newColor,newSecret);
     });
   });
@@ -124,7 +123,7 @@ window.onload = () => {
       checkSameNum(newColor, newSecret);
       [newColor[2],newColor[3]] = [newColor[3],newColor[2]];
       resultReroad(newColor, newSecret); //正解数反映
-      reflectionColor(newColor, newSecret);//色移動反映
+      reflectionColor();//色移動反映
       // console.log(newColor,newSecret);
     });
   });
@@ -133,8 +132,8 @@ window.onload = () => {
     // シャッフル
     newColor = shuffle(defultBox);
     newSecret = shuffle(defultBox);
-    zeroResult(newColor, newSecret);
+    zeroResult();
     resultReroad (newColor, newSecret) //正解数反映
-    reflectionColor(newColor, newSecret);//色移動反映
+    reflectionColor();//色移動反映
   });
-  }
+}
