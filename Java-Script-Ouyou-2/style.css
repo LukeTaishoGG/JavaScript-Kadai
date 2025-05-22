@@ -1,5 +1,5 @@
 .color-box {
-display: flex;
+  display: flex;
 }
 
 .targets {
@@ -11,8 +11,8 @@ display: flex;
 }
 
 .color-box-0, .color-box-1, .color-box-2, .color-box-3 {
-display: flex;
-align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .left {
