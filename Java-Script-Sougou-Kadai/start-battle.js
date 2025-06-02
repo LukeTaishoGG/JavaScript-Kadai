@@ -9,6 +9,9 @@ window.startBattle = () => {
     let newMetalslimeLife = metalSlime.HP;
     console.log("metal-slime");
     window.charImg.src = "https://front.cheercareer.jp/img/personal/2980_69845_message.jpg?updated_at=1579588291";
+    let metalSlimeAppear = document.createElement("p");  // 新しいp要素を作る
+    metalSlimeAppear.textContent = "メタルスライムが現れた";
+    gameLog.appendChild(metalSlimeAppear);
     fightButton.addEventListener('click',() => {
       if ( newMetalslimeLife > 0) {
         newMetalslimeLife -= hero.Attack

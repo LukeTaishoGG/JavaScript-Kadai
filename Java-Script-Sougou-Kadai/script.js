@@ -49,6 +49,9 @@ window.onload = () => {
     if(positionY < 9){
       positionY++;
       console.log("Y=",positionY);
+      let upLog = document.createElement("p");  // 新しいp要素を作る
+      upLog.textContent = "上に進んだ";
+      gameLog.appendChild(upLog);
       if(Math.random() < 0.4){
         startBattle();
       }
@@ -59,6 +62,9 @@ window.onload = () => {
     if(positionY > 0){
       positionY--;
       console.log("Y=",positionY);
+      let downLog = document.createElement("p");  // 新しいp要素を作る
+      downLog.textContent = "下に進んだ";
+      gameLog.appendChild(downLog);
       if(Math.random() < 0.4){
         startBattle();
       }
@@ -69,6 +75,9 @@ window.onload = () => {
     if(positionX < 9){
       positionX++;
       console.log("X=",positionX);
+      let rightLog = document.createElement("p");  // 新しいp要素を作る
+      rightLog.textContent = "右に進んだ";
+      gameLog.appendChild(rightLog);
       if(Math.random() < 0.4){
         startBattle();
       }
@@ -79,6 +88,9 @@ window.onload = () => {
     if(positionX > 0){
       positionX--;
       console.log("X=",positionX);
+      let leftLog = document.createElement("p");  // 新しいp要素を作る
+      leftLog.textContent = "左に進んだ";
+      gameLog.appendChild(leftLog);
       if(Math.random() < 0.4){
         startBattle();
       }
