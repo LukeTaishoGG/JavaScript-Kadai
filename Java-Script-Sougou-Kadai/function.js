@@ -22,6 +22,7 @@ window.result = () => {
   if (hero.HP <= 0) {
     window.playerStatus();
     alert("GameOver");
+    window.location.reload();
   } else {
     window.upButton.disabled = false;
     window.downButton.disabled = false;

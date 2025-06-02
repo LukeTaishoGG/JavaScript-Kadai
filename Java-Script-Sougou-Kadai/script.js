@@ -13,8 +13,6 @@ window.onload = () => {
 
   // キャラクターを設置するdivを入手
   window.characterImg = document.getElementById("characterImg");
-  // ログの要素を入手
-  const gameLog = document.getElementById("gameLog");
 
   // キャラクター表示
   window.charImg = document.createElement('img');
@@ -49,9 +47,7 @@ window.onload = () => {
     if(positionY < 9){
       positionY++;
       console.log("Y=",positionY);
-      let upLog = document.createElement("p");  // 新しいp要素を作る
-      upLog.textContent = "上に進んだ";
-      gameLog.appendChild(upLog);
+      upLog();
       if(Math.random() < 0.4){
         startBattle();
       }
@@ -62,9 +58,7 @@ window.onload = () => {
     if(positionY > 0){
       positionY--;
       console.log("Y=",positionY);
-      let downLog = document.createElement("p");  // 新しいp要素を作る
-      downLog.textContent = "下に進んだ";
-      gameLog.appendChild(downLog);
+      downLog();
       if(Math.random() < 0.4){
         startBattle();
       }
@@ -75,9 +69,7 @@ window.onload = () => {
     if(positionX < 9){
       positionX++;
       console.log("X=",positionX);
-      let rightLog = document.createElement("p");  // 新しいp要素を作る
-      rightLog.textContent = "右に進んだ";
-      gameLog.appendChild(rightLog);
+      rightLog();
       if(Math.random() < 0.4){
         startBattle();
       }
@@ -88,9 +80,7 @@ window.onload = () => {
     if(positionX > 0){
       positionX--;
       console.log("X=",positionX);
-      let leftLog = document.createElement("p");  // 新しいp要素を作る
-      leftLog.textContent = "左に進んだ";
-      gameLog.appendChild(leftLog);
+      leftLog();
       if(Math.random() < 0.4){
         startBattle();
       }
