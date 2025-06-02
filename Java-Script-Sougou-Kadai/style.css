@@ -2,14 +2,12 @@
 display: flex;
 gap: 20px;
 }
-
 .game-screen {
   height: 600px;
   width: 600px;
   border: solid black;
   position: relative;
 }
-
 .display-left {
   position: absolute;
   top: 0;
@@ -23,7 +21,6 @@ gap: 20px;
   gap: 322px;
   padding: 10px;
 }
-
 table {
   position: absolute;
   top: 0;
@@ -32,19 +29,12 @@ table {
   height: 100%;
   width: 100%;
 }
-
 td {
   border: 1px solid black;
 }
-
-.player-status {
-  
-}
-
 .player-hp, .player-attac-p, .player-level{
   font-size: 15px;
 }
-
 .controller {
   height: 100px;
   width: 100px;
@@ -53,23 +43,19 @@ td {
   align-items: center;
   justify-content: center;
 }
-
 .left-right {
   display: flex;
   justify-content: center;
   gap: 20px;
 }
-
 .up-button, .down-button {
   display: block;
 }
-
 .map-area {
   background-color: blueviolet;
   height: 40px;
   width: 40px;
 }
-
 .character-img {
   background-color: none;
   height: 40px;
@@ -78,13 +64,11 @@ td {
   right: -170px;
   bottom: -159px;
 }
-
 .charImg {
 /* transform: scale(0.3); */
 height: 237px;
 width: auto;
 }
-
 .startBattle {
   /* background-color: blueviolet; */
   height: 100px;
@@ -95,13 +79,11 @@ width: auto;
   right: -132px;
   bottom: -482px;
 }
-
 .fight-button, .run-button {
   height: 50px;
   width: 100px;
   display: none;
 }
-
 .game-log {
   height: 600px;
   width: 250px;

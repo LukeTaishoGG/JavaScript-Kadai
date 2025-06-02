@@ -23,7 +23,6 @@ const metalSlime = {
   EP: 10,
   SpawnRate: 0.10,
 }
-
 // プレイヤーのステータスを表示
 window.playerStatus = () => {
   playerHP.textContent = `HP: ${hero.HP}`;

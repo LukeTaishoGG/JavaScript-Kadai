@@ -4,7 +4,6 @@ window.startBattle = () => {
   const fightButton = document.getElementById("fightButton");
   const runButton = document.getElementById("runButton");
   const random = Math.random();
-
   if(random < 0.10) { //metalSlime
     let newMetalslimeLife = metalSlime.HP;
     console.log("metal-slime");
