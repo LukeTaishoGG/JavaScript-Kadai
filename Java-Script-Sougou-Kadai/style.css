@@ -1,0 +1,110 @@
+.screen-log {
+display: flex;
+gap: 20px;
+}
+
+.game-screen {
+  height: 600px;
+  width: 600px;
+  border: solid black;
+  position: relative;
+}
+
+.display-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110px;
+  height: 100%;
+  z-index: 2;
+  background: none;
+  display: flex;
+  flex-direction: column;
+  gap: 322px;
+  padding: 10px;
+}
+
+table {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+}
+
+td {
+  border: 1px solid black;
+}
+
+.player-status {
+  
+}
+
+.player-hp, .player-attac-p, .player-level{
+  font-size: 15px;
+}
+
+.controller {
+  height: 100px;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-right {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.up-button, .down-button {
+  display: block;
+}
+
+.map-area {
+  background-color: blueviolet;
+  height: 40px;
+  width: 40px;
+}
+
+.character-img {
+  background-color: none;
+  height: 40px;
+  width: 40px;
+  position: relative;
+  right: -170px;
+  bottom: -159px;
+}
+
+.charImg {
+/* transform: scale(0.3); */
+height: 237px;
+width: auto;
+}
+
+.startBattle {
+  /* background-color: blueviolet; */
+  height: 100px;
+  width: 384px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  right: -132px;
+  bottom: -482px;
+}
+
+.fight-button, .run-button {
+  height: 50px;
+  width: 100px;
+  display: none;
+}
+
+.game-log {
+  height: 600px;
+  width: 250px;
+  border: solid black;
+  overflow-y: scroll;
+}
