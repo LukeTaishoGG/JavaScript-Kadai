@@ -32,6 +32,8 @@ window.onload = () => {
       if(Math.random() < 0.4){
         startBattle();
       }
+    }else if (positionY == 9){
+      cantUpLog();
     }
   })
   // 下
@@ -43,6 +45,8 @@ window.onload = () => {
       if(Math.random() < 0.4){
         startBattle();
       }
+    }else if (positionY == 0){
+      cantDownLog();
     }
   })
   // 右
@@ -54,6 +58,8 @@ window.onload = () => {
       if(Math.random() < 0.4){
         startBattle();
       }
+    }else if (positionX == 9){
+      cantDownLog();
     }
   })
   // 左
@@ -65,6 +71,8 @@ window.onload = () => {
       if(Math.random() < 0.4){
         startBattle();
       }
+    }else if (positionX == 0){
+      cantLeftLog();
     }
   })
   // プレイヤーのステータスを表示

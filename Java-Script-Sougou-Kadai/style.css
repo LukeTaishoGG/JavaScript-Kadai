@@ -56,21 +56,14 @@ td {
   height: 40px;
   width: 40px;
 }
-.character-img {
-  background-color: none;
-  height: 40px;
-  width: 40px;
-  position: relative;
-  right: -170px;
-  bottom: -159px;
-}
 .charImg {
-/* transform: scale(0.3); */
-height: 237px;
-width: auto;
+  height: 237px;
+  width: auto;
+  position: absolute;
+  inset: 50%;
+  transform: translate(-50%, -50%);
 }
 .startBattle {
-  /* background-color: blueviolet; */
   height: 100px;
   width: 384px;
   display: flex;
