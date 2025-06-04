@@ -59,7 +59,7 @@ window.onload = () => {
         startBattle();
       }
     }else if (positionX == 9){
-      cantDownLog();
+      cantRightLog();
     }
   })
   // 左

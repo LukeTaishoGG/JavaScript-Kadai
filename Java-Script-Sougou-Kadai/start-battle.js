@@ -34,8 +34,6 @@ window.startBattle = () => {
       if(random < 0.5) {
         failureRun();
         if ( newMetalslimeLife > 0) {
-          newMetalslimeLife -= hero.Attack
-          metalSlimeAttack();
           hero.HP -= metalSlime.Attack
           metalSlimeDamage();
           window.playerStatus();
@@ -66,7 +64,7 @@ window.startBattle = () => {
         window.playerStatus();
         if(newDragonLife <= 0) {
           hero.EP += dragon.EP;
-          metalSlimeKill();
+          dragonKill();
           window.result();
           window.playerStatus();
         }
@@ -76,14 +74,12 @@ window.startBattle = () => {
       let runRandom = Math.random();
       if(runRandom < 0.5) {
         failureRun();
-        newDragonLife -= hero.Attack
-        dragonAttack();
         hero.HP -= dragon.Attack
         dragonDamage();
         window.playerStatus();
         if(newDragonLife <= 0) {
           hero.EP += dragon.EP;
-          metalSlimeKill();
+          dragonKill();
           window.result();
           window.playerStatus();
         }
@@ -107,7 +103,7 @@ window.startBattle = () => {
         window.playerStatus();
         if(newSlimeLife <= 0) {
           hero.EP += slime.EP;
-          metalSlimeKill();
+          slimeKill();
           window.result();
           window.playerStatus();
         }
@@ -117,13 +113,9 @@ window.startBattle = () => {
       let runRandom = Math.random();
       if(runRandom < 0.5) {
         failureRun();
-        newSlimeLife -= hero.Attack
-        slimeAttack();
-        hero.HP -= slime.Attack
-        slimeDamage();
         if(newSlimeLife <= 0){
           hero.EP += slime.EP;
-          metalSlimeKill();
+          slimeKill();
           window.result();
           window.playerStatus();
         }
