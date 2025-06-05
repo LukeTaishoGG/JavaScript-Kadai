@@ -1,3 +1,38 @@
+// キャラクターの位置
+let positionY = 4;
+let positionX = 4;
+let playerPosition = mapBiome[positionY][positionX];
+const upOrRightMoveEvent = (position,maxNum,moveLog,stopLog) => {
+  //エンカウント率
+  const encounterRate = 0.4;
+  if(position < maxNum){
+    position++;
+    console.log(position)
+    log(moveLog);
+    if(Math.random() < encounterRate){
+      startBattle();
+    }
+    return position;
+  }else if (position === maxNum){
+    log(stopLog);
+    return position;
+  }
+}
+const downOrLeftMoveEvent = (position,maxNum,moveLog,stopLog) => {
+  //エンカウント率
+  const encounterRate = 0.4;
+  if(position > maxNum){
+    position--;
+    log(moveLog);
+    if(Math.random() < encounterRate){
+      startBattle();
+    }
+    return position;
+  }else if (position === maxNum){
+    log(stopLog);
+    return position;
+  }
+}
 window.enableButton = () => {
   window.upButton.disabled = false;
   window.downButton.disabled = false;
@@ -5,7 +40,7 @@ window.enableButton = () => {
   window.leftButton.disabled = false;
   fightButton.style.display = 'none';
   runButton.style.display = 'none';
-  charImg.src = ('https://i.pinimg.com/736x/9d/6b/4a/9d6b4ad803f473dbddf9daaeedda49b1.jpg');
+  charImg.src = heroImg;
 }
 window.disableButton = () => {
   window.upButton.disabled = true;
@@ -28,6 +63,6 @@ window.result = () => {
     window.leftButton.disabled = false;
     fightButton.style.display = 'none';
     runButton.style.display = 'none';
-    charImg.src = ('https://i.pinimg.com/736x/9d/6b/4a/9d6b4ad803f473dbddf9daaeedda49b1.jpg');
+    charImg.src = heroImg;
   }
 }

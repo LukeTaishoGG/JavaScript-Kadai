@@ -15,68 +15,24 @@ window.onload = () => {
   // キャラクター表示
   window.charImg = document.createElement('img');
   window.charImg.classList.add("charImg");
-  window.charImg.src = ('https://i.pinimg.com/736x/9d/6b/4a/9d6b4ad803f473dbddf9daaeedda49b1.jpg');
+  window.charImg.src = heroImg;
   window.charImg.alt = ('charImg');
   characterImg.appendChild(window.charImg);
-  // キャラクターの位置
-  let positionY = 4;
-  let positionX = 4;
-  let playerPosition = mapBiome[positionY][positionX];
   // ボタンのイベント作成
   // 上
-  upButton.addEventListener('click',() => {
-    if(positionY < 9){
-      positionY++;
-      console.log("Y=",positionY);
-      upLog();
-      if(Math.random() < 0.4){
-        startBattle();
-      }
-    }else if (positionY == 9){
-      cantUpLog();
-    }
-  })
+  upButton.addEventListener('click', () => {
+    positionY = upOrRightMoveEvent(positionY, 9, "上に進んだ", "これ以上、上には進めない");
+  });
   // 下
   downButton.addEventListener('click',() => {
-    if(positionY > 0){
-      positionY--;
-      console.log("Y=",positionY);
-      downLog();
-      if(Math.random() < 0.4){
-        startBattle();
-      }
-    }else if (positionY == 0){
-      cantDownLog();
-    }
+    positionY = downOrLeftMoveEvent(positionY, 0, "下に進んだ", "これ以上、下には進めない");
   })
   // 右
-  rightButton.addEventListener('click',() => {
-    if(positionX < 9){
-      positionX++;
-      console.log("X=",positionX);
-      rightLog();
-      if(Math.random() < 0.4){
-        startBattle();
-      }
-    }else if (positionX == 9){
-      cantRightLog();
-    }
-  })
+  rightButton.addEventListener('click', () => {
+    positionX = upOrRightMoveEvent(positionX, 9, "右に進んだ", "これ以上、右には進めない");
+  });
   // 左
   leftButton.addEventListener('click',() => {
-    if(positionX > 0){
-      positionX--;
-      console.log("X=",positionX);
-      leftLog();
-      if(Math.random() < 0.4){
-        startBattle();
-      }
-    }else if (positionX == 0){
-      cantLeftLog();
-    }
+    positionX = downOrLeftMoveEvent(positionX, 0, "左に進んだ", "これ以上、左には進めない");
   })
-  // プレイヤーのステータスを表示
-  playerHP.textContent = `HP: ${hero.HP}`;
-  playerAttacP.textContent = `Attack: ${hero.Attack}`;
-  playerLevel.textContent = `Level: ${hero.Level}`;
 }
