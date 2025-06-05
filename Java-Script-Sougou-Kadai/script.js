@@ -6,18 +6,18 @@ window.onload = () => {
   const playerAttacP = document.getElementById("playerAttacP");
   const playerLevel = document.getElementById("playerLevel");
   // ボタンの要素を入手
-  window.upButton = document.getElementById("upButton");
-  window.downButton = document.getElementById("downButton");
-  window.rightButton = document.getElementById("rightButton");
-  window.leftButton = document.getElementById("leftButton");
+  upButton = document.getElementById("upButton");
+  downButton = document.getElementById("downButton");
+  rightButton = document.getElementById("rightButton");
+  leftButton = document.getElementById("leftButton");
   // キャラクターを設置するdivを入手
-  window.characterImg = document.getElementById("characterImg");
+  characterImg = document.getElementById("characterImg");
   // キャラクター表示
-  window.charImg = document.createElement('img');
-  window.charImg.classList.add("charImg");
-  window.charImg.src = heroImg;
-  window.charImg.alt = ('charImg');
-  characterImg.appendChild(window.charImg);
+  charImg = document.createElement('img');
+  charImg.classList.add("charImg");
+  charImg.src = heroImg;
+  charImg.alt = ('charImg');
+  characterImg.appendChild(charImg);
   // ボタンのイベント作成
   // 上
   upButton.addEventListener('click', () => {

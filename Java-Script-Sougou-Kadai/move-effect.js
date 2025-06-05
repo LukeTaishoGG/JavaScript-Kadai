@@ -7,7 +7,7 @@ const upOrRightMoveEvent = (position,maxNum,moveLog,stopLog) => {
   const encounterRate = 0.4;
   if(position < maxNum){
     position++;
-    console.log(position)
+    console.log(position);
     log(moveLog);
     if(Math.random() < encounterRate){
       startBattle();
@@ -23,6 +23,7 @@ const downOrLeftMoveEvent = (position,maxNum,moveLog,stopLog) => {
   const encounterRate = 0.4;
   if(position > maxNum){
     position--;
+    console.log(position);
     log(moveLog);
     if(Math.random() < encounterRate){
       startBattle();
@@ -33,34 +34,34 @@ const downOrLeftMoveEvent = (position,maxNum,moveLog,stopLog) => {
     return position;
   }
 }
-window.enableButton = () => {
-  window.upButton.disabled = false;
-  window.downButton.disabled = false;
-  window.rightButton.disabled = false;
-  window.leftButton.disabled = false;
+enableButton = () => {
+  upButton.disabled = false;
+  downButton.disabled = false;
+  rightButton.disabled = false;
+  leftButton.disabled = false;
   fightButton.style.display = 'none';
   runButton.style.display = 'none';
   charImg.src = heroImg;
 }
-window.disableButton = () => {
-  window.upButton.disabled = true;
-  window.downButton.disabled = true;
-  window.rightButton.disabled = true;
-  window.leftButton.disabled = true;
+disableButton = () => {
+  upButton.disabled = true;
+  downButton.disabled = true;
+  rightButton.disabled = true;
+  leftButton.disabled = true;
   fightButton.style.display = 'block';
   runButton.style.display = 'block';
 }
-window.result = () => {
+result = () => {
   // 戦闘結果
   if (hero.HP <= 0) {
-    window.playerStatus();
+    playerStatus();
     alert("GameOver");
-    window.location.reload();
+    location.reload();
   } else {
-    window.upButton.disabled = false;
-    window.downButton.disabled = false;
-    window.rightButton.disabled = false;
-    window.leftButton.disabled = false;
+    upButton.disabled = false;
+    downButton.disabled = false;
+    rightButton.disabled = false;
+    leftButton.disabled = false;
     fightButton.style.display = 'none';
     runButton.style.display = 'none';
     charImg.src = heroImg;

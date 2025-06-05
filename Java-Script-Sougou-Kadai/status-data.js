@@ -24,14 +24,14 @@ const metalSlime = {
   SpawnRate: 0.10,
 }
 // プレイヤーのステータスを表示
-window.playerStatus = () => {
+playerStatus = () => {
   playerHP.textContent = `HP: ${hero.HP}`;
   playerAttacP.textContent = `Attack: ${hero.Attack}`;
   playerLevel.textContent = `Level: ${hero.Level}`;
 }
-window.playerStatus();
+playerStatus();
 //キャラクターイメージ
-const heroImg = ('https://i.pinimg.com/736x/9d/6b/4a/9d6b4ad803f473dbddf9daaeedda49b1.jpg');
-const MetalSlimeImg = ("https://front.cheercareer.jp/img/personal/2980_69845_message.jpg?updated_at=1579588291");
-const drogonImg = ("https://koboldpress.com/wp-content/uploads/2024/06/DQVIII_Hacksaurus.png");
-const slimeImg = ("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDLFPKhqCLGpPLuelOSbqks8UB05FA9Jhj-A&s");
+const heroImg = 'https://i.pinimg.com/736x/9d/6b/4a/9d6b4ad803f473dbddf9daaeedda49b1.jpg';
+const MetalSlimeImg = "https://front.cheercareer.jp/img/personal/2980_69845_message.jpg?updated_at=1579588291";
+const drogonImg = "https://koboldpress.com/wp-content/uploads/2024/06/DQVIII_Hacksaurus.png";
+const slimeImg = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDLFPKhqCLGpPLuelOSbqks8UB05FA9Jhj-A&s";
