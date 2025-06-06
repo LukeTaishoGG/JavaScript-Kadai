@@ -1,4 +1,6 @@
-startBattle = () => {
+let onFight = null;//グローバルとしてonFightとonRunを宣言
+let onRun = null;
+const startBattle = () => {
   disableButton();
   const fightButton = document.getElementById("fightButton");
   const runButton = document.getElementById("runButton");
@@ -11,30 +13,37 @@ startBattle = () => {
     monster = metalSlime;
     monsterImg = MetalSlimeImg;
     monsterName = "メタルスライム";
-    monsterDamage = 10;
+    monsterDamage = metalSlime.Attack;
   } else if (random < dragonRate) {//dragon
     monster = dragon;
     monsterImg = drogonImg;
     monsterName = "ドラゴン";
-    monsterDamage = 10;
+    monsterDamage = dragon.Attack;
   } else {//slime
     monster = slime;
     monsterImg = slimeImg;
     monsterName = "スライム";
-    monsterDamage = 5;
+    monsterDamage = slime.Attack;
   }
   monsterAttack = monster.Attack;
   monsterEP = monster.EP;
   log(`${monsterName}が現れた！`);
   charImg.src = monsterImg;
   let monsterLife = monster.HP;
-  let onFight = () => {
+  fightButton.removeEventListener('click', onFight);//イベント解除,初期化
+  runButton.removeEventListener('click', onRun);
+  onFight = () => {
     if (monsterLife > 0) {
       monsterLife -= hero.Attack;
       log(`${monsterName}に${monsterDamage}ダメージ！`);
       hero.HP -= monsterAttack;
       log(`${monsterDamage}ダメージ受けた！`);
       playerStatus();
+      if (hero.HP <= 0) {
+        log('Your Dead');
+        result();
+        return;
+      }
       if(monsterLife <= 0) {
         hero.EP += monsterEP;
         log(`${monsterName}を倒した！`);
@@ -42,8 +51,8 @@ startBattle = () => {
         playerStatus();
       }
     }
-  }
-  let onRun = () => {
+  };
+  onRun = () => {
     let runRandom = Math.random();
     if(runRandom < runRate) {
       log("逃げれなかった！");
@@ -52,11 +61,7 @@ startBattle = () => {
       result();
       playerStatus();
     }
-  }
-  fightButton.removeEventListener('click', onFight);
-  runButton.removeEventListener('click', onRun);
+  };
   fightButton.addEventListener('click', onFight);
   runButton.addEventListener('click', onRun);
-  onFight = onFight;
-  onRun = onRun;
 }

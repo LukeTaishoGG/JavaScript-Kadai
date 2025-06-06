@@ -34,7 +34,7 @@ const downOrLeftMoveEvent = (position,maxNum,moveLog,stopLog) => {
     return position;
   }
 }
-enableButton = () => {
+const enableButton = () => {
   upButton.disabled = false;
   downButton.disabled = false;
   rightButton.disabled = false;
@@ -43,7 +43,7 @@ enableButton = () => {
   runButton.style.display = 'none';
   charImg.src = heroImg;
 }
-disableButton = () => {
+const disableButton = () => {
   upButton.disabled = true;
   downButton.disabled = true;
   rightButton.disabled = true;
@@ -51,7 +51,7 @@ disableButton = () => {
   fightButton.style.display = 'block';
   runButton.style.display = 'block';
 }
-result = () => {
+const result = () => {
   // 戦闘結果
   if (hero.HP <= 0) {
     playerStatus();

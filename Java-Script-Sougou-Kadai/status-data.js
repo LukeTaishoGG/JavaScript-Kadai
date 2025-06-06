@@ -24,7 +24,7 @@ const metalSlime = {
   SpawnRate: 0.10,
 }
 // プレイヤーのステータスを表示
-playerStatus = () => {
+const playerStatus = () => {
   playerHP.textContent = `HP: ${hero.HP}`;
   playerAttacP.textContent = `Attack: ${hero.Attack}`;
   playerLevel.textContent = `Level: ${hero.Level}`;

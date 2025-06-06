@@ -6,12 +6,12 @@ window.onload = () => {
   const playerAttacP = document.getElementById("playerAttacP");
   const playerLevel = document.getElementById("playerLevel");
   // ボタンの要素を入手
-  upButton = document.getElementById("upButton");
-  downButton = document.getElementById("downButton");
-  rightButton = document.getElementById("rightButton");
-  leftButton = document.getElementById("leftButton");
+  const upButton = document.getElementById("upButton");
+  const downButton = document.getElementById("downButton");
+  const rightButton = document.getElementById("rightButton");
+  const leftButton = document.getElementById("leftButton");
   // キャラクターを設置するdivを入手
-  characterImg = document.getElementById("characterImg");
+  const characterImg = document.getElementById("characterImg");
   // キャラクター表示
   charImg = document.createElement('img');
   charImg.classList.add("charImg");
