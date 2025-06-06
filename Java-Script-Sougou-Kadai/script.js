@@ -3,7 +3,7 @@ window.onload = () => {
   const gameScreen = document.getElementById("gameScreen");
   // プレイヤーステータスの要素を入手
   const playerHP = document.getElementById("playerHP");
-  const playerAttacP = document.getElementById("playerAttacP");
+  const playerAttackP = document.getElementById("playerAttackP");
   const playerLevel = document.getElementById("playerLevel");
   // ボタンの要素を入手
   const upButton = document.getElementById("upButton");
@@ -15,7 +15,7 @@ window.onload = () => {
   // キャラクター表示
   charImg = document.createElement('img');
   charImg.classList.add("charImg");
-  charImg.src = heroImg;
+  charImg.src = hero.Img;
   charImg.alt = ('charImg');
   characterImg.appendChild(charImg);
   // ボタンのイベント作成

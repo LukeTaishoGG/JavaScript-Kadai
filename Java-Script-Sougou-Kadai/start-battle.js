@@ -1,64 +1,57 @@
-let onFight = null;//グローバルとしてonFightとonRunを宣言
-let onRun = null;
-const startBattle = () => {
-  disableButton();
-  const fightButton = document.getElementById("fightButton");
-  const runButton = document.getElementById("runButton");
-  const metalSlimeRate = 0.10;
-  const dragonRate = 0.35;
-  const runRate = 0.5;
-  let monster, monsterImg, monsterName, monsterAttack, monsterEP;
-  let random = Math.random();
-  if(random < metalSlimeRate) {//metalSlime
-    monster = metalSlime;
-    monsterImg = MetalSlimeImg;
-    monsterName = "メタルスライム";
-  } else if (random < dragonRate) {//dragon
-    monster = dragon;
-    monsterImg = drogonImg;
-    monsterName = "ドラゴン";
-  } else {//slime
-    monster = slime;
-    monsterImg = slimeImg;
-    monsterName = "スライム";
+const fightButton = document.getElementById("fightButton");
+const runButton = document.getElementById("runButton");
+let currentMonster = undefined;
+let monsterLife = 0; // グローバルで管理
+const runRate = 0.5;
+const onFight = () => {
+  if (monsterLife > 0) { //戦闘処理
+    monsterLife -= hero.Attack;
+    log(`${currentMonster.Name}に${hero.Attack}ダメージ！`);
+    hero.HP -= currentMonster.Attack;
+    log(`${currentMonster.Attack}ダメージ受けた！`);
+    playerStatus();
+    if (hero.HP <= 0) {
+      result(currentMonster);
+    }else if(monsterLife <= 0) {
+      log(`${currentMonster.Name}を倒した！`);
+      result(currentMonster);
+      log(`EP: ${currentMonster.EP} +`);
+      log(`EP: ${hero.EP} now`);
+      playerStatus();
+      enableControl();
+    }
   }
-  log(`${monsterName}が現れた！`);
-  monsterAttack = monster.Attack;
-  monsterEP = monster.EP;
-  charImg.src = monsterImg;
-  let monsterLife = monster.HP;
-  fightButton.removeEventListener('click', onFight);//イベント解除,初期化
-  runButton.removeEventListener('click', onRun);
-  onFight = () => {
-    if (monsterLife > 0) {
-      monsterLife -= hero.Attack;
-      log(`${monsterName}に${hero.Attack}ダメージ！`);
-      hero.HP -= monsterAttack;
-      log(`${monsterAttack}ダメージ受けた！`);
-      playerStatus();
-      if (hero.HP <= 0) {
-        log('ゲームオーバー！');
-        result();
-        return;
-      }
-      if(monsterLife <= 0) {
-        hero.EP += monsterEP;
-        log(`${monsterName}を倒した！`);
-        result();
-        playerStatus();
-      }
-    }
-  };
-  onRun = () => {
-    let runRandom = Math.random();
-    if(runRandom < runRate) {
-      log("逃げれなかった！");
-    }else {
-      log("逃げれた！");
-      result();
-      playerStatus();
-    }
-  };
-  fightButton.addEventListener('click', onFight);
-  runButton.addEventListener('click', onRun);
+};
+const onRun = () => {
+  let runRandom = Math.random();
+  if(runRandom < runRate) { //逃げる処理
+    log("逃げれなかった！");
+    hero.HP -= currentMonster.Attack;
+    log(`${currentMonster.Attack}ダメージ受けた！`);
+    playerStatus();
+    result();
+  }else {
+    log("逃げれた！");
+    result(currentMonster);
+    playerStatus();
+  }
+};
+fightButton.addEventListener('click', ()=>{
+  onFight();
+});
+runButton.addEventListener('click', ()=>{
+  onRun();
+});
+const startBattle = () => {
+  let random = Math.random();
+  if(random < metalSlime.SpawnRate) {//metalSlime
+    currentMonster = metalSlime;
+  } else if (random < dragon.SpawnRate) {//dragon
+    currentMonster = dragon;
+  } else {//slime
+    currentMonster = slime;
+  }
+  log(`${currentMonster.Name}が現れた！`);
+  charImg.src = currentMonster.Img;
+  monsterLife = currentMonster.HP;
 }

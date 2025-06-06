@@ -32,7 +32,7 @@ table {
 td {
   border: 1px solid black;
 }
-.player-hp, .player-attac-p, .player-level{
+.player-hp, .player-attack-p, .player-level{
   font-size: 15px;
 }
 .controller {
