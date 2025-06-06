@@ -1,8 +1,19 @@
+const mapBiome = [
+  [0,0,0,0,0,0,0,0,0,0],//0
+  [0,0,0,0,0,0,0,0,0,0],//1
+  [0,0,0,0,0,0,0,0,0,0],//2
+  [0,0,0,0,0,0,0,0,0,0],//3
+  [0,0,0,0,4,0,0,0,0,0],//4
+  [0,0,0,0,0,0,0,0,0,0],//5
+  [0,0,0,0,0,0,0,0,0,0],//6
+  [0,0,0,0,0,0,0,0,0,0],//7
+  [0,0,0,0,0,0,0,0,0,0],//8
+  [0,0,0,0,0,0,0,0,0,0],//9
+]
 // キャラクターの位置
 let positionY = 4;
 let positionX = 4;
 let playerPosition = mapBiome[positionY][positionX];
-
 const enableControl = () => {
   upButton.disabled = false;
   downButton.disabled = false;
@@ -19,17 +30,6 @@ const disableControl = () => {
   leftButton.disabled = true;
   fightButton.style.display = 'block';
   runButton.style.display = 'block';
-}
-const result = (currentMonster) => {
-  if (hero.HP <= 0) {
-    playerStatus();
-    log('ゲームオーバー！');
-    alert("GameOver");
-    location.reload();
-  } else {
-    hero.EP += currentMonster.EP;
-    enableControl();
-  }
 }
 const upOrRightMoveEvent = (position,maxNum,moveLog,stopLog) => {
   //エンカウント率

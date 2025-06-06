@@ -3,6 +3,17 @@ const runButton = document.getElementById("runButton");
 let currentMonster = undefined;
 let monsterLife = 0; // グローバルで管理
 const runRate = 0.5;
+const result = (currentMonster) => {
+  if (hero.HP <= 0) {
+    playerStatus();
+    log('ゲームオーバー！');
+    alert("GameOver");
+    location.reload();
+  } else {
+    hero.EP += currentMonster.EP;
+    enableControl();
+  }
+}
 const onFight = () => {
   if (monsterLife > 0) { //戦闘処理
     monsterLife -= hero.Attack;
