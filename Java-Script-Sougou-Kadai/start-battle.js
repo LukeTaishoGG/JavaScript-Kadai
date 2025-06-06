@@ -7,27 +7,24 @@ const startBattle = () => {
   const metalSlimeRate = 0.10;
   const dragonRate = 0.35;
   const runRate = 0.5;
-  let monster, monsterImg, monsterName, monsterDamage, monsterAttack, monsterEP;
+  let monster, monsterImg, monsterName, monsterAttack, monsterEP;
   let random = Math.random();
   if(random < metalSlimeRate) {//metalSlime
     monster = metalSlime;
     monsterImg = MetalSlimeImg;
     monsterName = "メタルスライム";
-    monsterDamage = metalSlime.Attack;
   } else if (random < dragonRate) {//dragon
     monster = dragon;
     monsterImg = drogonImg;
     monsterName = "ドラゴン";
-    monsterDamage = dragon.Attack;
   } else {//slime
     monster = slime;
     monsterImg = slimeImg;
     monsterName = "スライム";
-    monsterDamage = slime.Attack;
   }
+  log(`${monsterName}が現れた！`);
   monsterAttack = monster.Attack;
   monsterEP = monster.EP;
-  log(`${monsterName}が現れた！`);
   charImg.src = monsterImg;
   let monsterLife = monster.HP;
   fightButton.removeEventListener('click', onFight);//イベント解除,初期化
@@ -35,12 +32,12 @@ const startBattle = () => {
   onFight = () => {
     if (monsterLife > 0) {
       monsterLife -= hero.Attack;
-      log(`${monsterName}に${monsterDamage}ダメージ！`);
+      log(`${monsterName}に${hero.Attack}ダメージ！`);
       hero.HP -= monsterAttack;
-      log(`${monsterDamage}ダメージ受けた！`);
+      log(`${monsterAttack}ダメージ受けた！`);
       playerStatus();
       if (hero.HP <= 0) {
-        log('Your Dead');
+        log('ゲームオーバー！');
         result();
         return;
       }
